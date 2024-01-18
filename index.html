@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snow(card)</title>
+
+
+<style>
+    
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        overflow: hidden;
+    }
+
+    .flipbox{
+            position: relative;
+            width: 300px;
+            height: 200px;
+            opacity: 0;
+            
+            animation: delaydisplay 3s forwards;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            
+        }
+        @keyframes delaydisplay{
+        to{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    .card{
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            background-color: #fff;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0; 
+            left: 0;
+            transition: transform .5s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 1px 5px 13px 2px #ccc;
+            color: #000;
+            z-index: 3;
+        }
+        .front{
+            transform: rotateY(0deg);
+        }
+        .back{
+            transform: rotateY(180deg);
+        }
+        .flipbox:hover .front{
+            transform: rotateY(-180deg);
+        }
+        .flipbox:hover .back{
+            transform: rotateY(0deg);
+        }
+
+
+
+    .snow{
+        /* position: relative; */
+        display: flex;
+        z-index: 1;
+    }
+    .snow span{
+        position: relative;
+        width: 3px;
+        height: 3px;
+        background-color: #fff;
+        margin: 0 10px;
+        border-radius: 50%;
+        animation: snowing 5s linear infinite;
+        animation-duration: calc(30s / var(--i));
+        transform-origin: bottom;
+        opacity: 0.6;
+        transform: rotate(45deg);
+    }
+    @keyframes snowing{
+        0%{
+            transform: translateY(-500px) scale(2) rotate(45deg);
+        }
+        10%{
+            transform: translateY(-400px) scale(2) rotate(45deg);
+        }
+        20%{
+            transform: translateY(-300px) scale(2);
+        }
+        30%{
+            transform: translateY(-200px) scale(2);
+        }
+        40%{
+            transform: translateY(-100px) scale(1.7);
+        }
+        50%{
+            transform: translateY(0px) scale(1.5);
+        }
+        60%{
+            transform: translateY(100px) scale(1.3);
+        }
+        70%{
+            transform: translateY(200px) scale(1);
+        }
+        80%{
+            transform: translateY(300px) scale(1);
+        }
+        90%{
+            transform: translateY(400px) scale(0.5);
+        }
+        100%{
+            transform: translateY(500px) scale(0);
+        }
+    }
+
+    .ground1{
+        height: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+        transform: translateY(400px);
+        animation: ground 10s linear forwards;
+        animation-iteration-count: 1;
+        opacity: 0;    
+    }
+    .ground2{
+        height: 50px;
+        width: 50px;
+        border-radius: 100%;
+        background-color: #fff;
+        transform: translateX(400px) translateY(345px);
+       
+        
+    }.ground3{
+        height: 30px;
+        width: 30px;
+        border-radius: 100%;
+        background-color: #fff;
+        transform:  translateX(410px) translateY(270px);
+        
+        
+    }
+    .snowman{
+        animation: snowman 10s linear forwards;
+        animation-iteration-count: 1;
+        opacity: 0;
+    }
+
+    @keyframes snowman{
+        0%{
+            opacity: 0;
+        }
+        10%{
+            opacity:0;
+        }
+        30%{
+            opacity:0;
+        }
+        50%{
+            opacity:0;
+        }
+        60%{
+            opacity:0;
+        }
+        70%{
+            opacity:0;
+        }
+        80%{
+            opacity: 0;
+        }
+        90%{
+            opacity: 0.3;
+        }
+        93%{
+            opacity: 0.5;
+        }
+        95%{
+            opacity: 0.7;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+    .ground4{
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        background-color: #fff;
+        transform: translateX(275px) translateY(215px);
+       
+    }    
+    .ground5{
+        height: 70px;
+        width: 70px;
+        border-radius: 100%;
+        background-color: #fff;
+        transform:  translateX(290px) translateY(55px);
+        
+        
+    }
+    .snowman1{
+        animation: snowman1 13s linear forwards;
+        animation-iteration-count: 1;
+        opacity: 0;
+    }
+
+    @keyframes snowman1{
+        0%{
+            opacity: 0;
+        }
+        10%{
+            opacity:0;
+        }
+        30%{
+            opacity:0;
+        }
+        50%{
+            opacity:0;
+        }
+        60%{
+            opacity:0;
+        }
+        70%{
+            opacity:0;
+        }
+        80%{
+            opacity: 0;
+        }
+        90%{
+            opacity: 0.3;
+        }
+        93%{
+            opacity: 0.5;
+        }
+        95%{
+            opacity: 0.7;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+    @keyframes snowman{
+        0%{
+            opacity: 0;
+        }
+        10%{
+            opacity:0;
+        }
+        30%{
+            opacity:0;
+        }
+        50%{
+            opacity:0;
+        }
+        60%{
+            opacity:0;
+        }
+        70%{
+            opacity:0;
+        }
+        80%{
+            opacity: 0;
+        }
+        90%{
+            opacity: 0.3;
+        }
+        93%{
+            opacity: 0.5;
+        }
+        95%{
+            opacity: 0.7;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+
+    @keyframes ground{
+        10%{
+            opacity:0;
+        }
+        30%{
+            opacity:0;
+        }
+        50%{
+            opacity:0.2;
+        }
+        60%{
+            opacity:0.3;
+        }
+        70%{
+            opacity:0.5;
+        }
+        80%{
+            opacity: 0.8;
+        }
+        90%{
+            opacity: 0.9;
+        }
+        100%{
+            opacity:1;
+        }
+    }
+
+    .trunk{
+        width: 10px;
+        height: 30px;
+        background-color: rgb(143, 14, 14);
+        transform: translateX(1100px) translateY(110px);
+    }
+    .leave1 {
+      width: 0;
+      height: 0;
+      border-left: 25px solid transparent; /* 左边透明边 */
+      border-right: 25px solid transparent; /* 右边透明边 */
+      border-bottom: 50px solid #4CAF50; /* 底边颜色，可以根据需要修改颜色和大小 */
+      transform: translateX(1080px) translateY(30px);
+    }
+    .leave2 {
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent; /* 左边透明边 */
+      border-right: 15px solid transparent; /* 右边透明边 */
+      border-bottom: 30px solid #4CAF50; /* 底边颜色，可以根据需要修改颜色和大小 */
+      transform: translateX(1090px) translateY(-35px);
+    }
+    .leave3 {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent; /* 左边透明边 */
+      border-right: 10px solid transparent; /* 右边透明边 */
+      border-bottom: 20px solid #4CAF50; /* 底边颜色，可以根据需要修改颜色和大小 */
+      transform: translateX(1095px) translateY(-75px);
+    }
+
+    .tree{
+        animation: tree 5s linear forwards;
+        animation-iteration-count: 1;
+        opacity: 0;
+    }
+    @keyframes tree{
+        10%{
+            opacity:0;
+        }
+        30%{
+            opacity:0;
+        }
+        50%{
+            opacity:0.2;
+        }
+        60%{
+            opacity:0.3;
+        }
+        70%{
+            opacity:0.5;
+        }
+        80%{
+            opacity: 0.8;
+        }
+        90%{
+            opacity: 0.9;
+        }
+        100%{
+            opacity:1;
+        }
+    }
+
+    
+    
+</style>
+</head>
+<body>
+
+    
+
+   
+    <div class="loader">
+        <div class="snow">
+            <span style="--i:7"></span>
+            <span style="--i:8"></span>
+            <span style="--i:2"></span>
+            <span style="--i:2"></span>
+            <span style="--i:4"></span>
+            <span style="--i:9"></span>
+            <span style="--i:6"></span>
+            <span style="--i:5"></span>
+            <span style="--i:8"></span>
+            <span style="--i:5"></span>
+            <span style="--i:7"></span>
+            <span style="--i:11"></span>
+            <span style="--i:12"></span>
+            <span style="--i:3"></span>
+            <span style="--i:14"></span>
+            <span style="--i:5"></span>
+            <span style="--i:6"></span>
+            <span style="--i:7"></span>
+            <span style="--i:3"></span>
+            <span style="--i:4"></span>
+            <span style="--i:2"></span>
+            <span style="--i:3"></span>
+            <span style="--i:4"></span>
+            <span style="--i:9"></span>
+            <span style="--i:6"></span>
+            <span style="--i:7"></span>
+            <span style="--i:10"></span>
+            <span style="--i:5"></span>
+            <span style="--i:7"></span>
+            <span style="--i:5"></span>
+            <span style="--i:12"></span>
+            <span style="--i:4"></span>
+            <span style="--i:9"></span>
+            <span style="--i:5"></span>
+            <span style="--i:3"></span>
+            <span style="--i:8"></span>
+            <span style="--i:13"></span>
+            <span style="--i:2"></span>
+            <span style="--i:13"></span>
+            <span style="--i:12"></span>
+            <span style="--i:4"></span>
+            <span style="--i:5"></span>
+            <span style="--i:7"></span>
+            <span style="--i:5"></span>
+            <span style="--i:8"></span>
+            <span style="--i:4"></span>
+            <span style="--i:2"></span>
+            <span style="--i:10"></span>
+            <span style="--i:12"></span>
+            <span style="--i:7"></span>
+            <span style="--i:4"></span>
+            <span style="--i:15"></span>
+            <span style="--i:8"></span>
+            <span style="--i:7"></span>
+            <span style="--i:3"></span>
+            <span style="--i:7"></span>
+            <span style="--i:4"></span>
+            <span style="--i:15"></span>
+            <span style="--i:6"></span>
+            <span style="--i:7"></span>
+        </div>
+        <div class="ground1"></div>
+        <div class="snowman">
+            <div class="ground2"></div> 
+            <div class="ground3"></div>  
+        </div>
+
+        <div class="snowman1">
+            <div class="ground4"></div> 
+            <div class="ground5"></div> 
+        </div>
+
+        <div class="tree">
+            <div class="trunk"></div>
+            <div class="leave1"></div>
+            <div class="leave2"></div>
+            <div class="leave3"></div>
+        </div>
+        <div class="flipbox">
+            <div class="card front">
+                <h2>誒嗨 又來了</h2>
+            </div>
+            <div class="card back">
+                <h4>
+                    段考結束了！<br>
+                    你很棒哇～你撐過了<br>
+                    我知道你對成績可能不滿意TT<br>
+                    但是你已經很棒了哇！<br>
+                    你努力過了>_< <br>
+                    回家好好休息哇～<br>
+                    明天就結業式了<br>
+                    你明天出門要注意安全<br>
+                    今天辛苦你了 你很棒。～。
+                </h4>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>
